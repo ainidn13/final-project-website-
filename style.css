@@ -1,0 +1,299 @@
+/* ==========================================================================
+   MEDIA ART EXHIBITION 11 (SANCTUARY OF PANACEA)
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Space+Grotesk:wght@400;600;700&display=swap');
+
+:root {
+    --panacea-dark-purple: #1a0b36;
+    --panacea-violet: #4c229d;
+    --panacea-cyan: #00f0ff; 
+    --panacea-lime: #b6ff00;
+    --font-display: 'Orbitron', sans-serif;
+    --font-base: 'Space Grotesk', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-base);
+    background-color: #0b0518;
+    color: #ffffff;
+}
+
+/* ==========================================================================
+   NAVBAR COMPONENT
+   ========================================================================== */
+.navbar {
+    background-color: #310461 !important;
+    border-bottom: 3px solid var(--panacea-cyan) !important;
+}
+
+.navbar-brand {
+    font-family: var(--font-display);
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #ffffff !important;
+}
+
+.nav-link {
+    font-family: var(--font-base);
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    transition: color 0.2s ease-in-out;
+}
+
+.nav-link:hover, 
+.nav-link.active {
+    color: var(--panacea-lime) !important;
+}
+
+.text-merah { color: #fa4248 !important; text-shadow: 0 0 8px rgba(231, 25, 25, 0.9); } 
+.text-biru  { color: #76dbf9 !important; text-shadow: 0 0 8px rgba(0, 240, 255, 0.5); }
+.text-hijau { color: #2dc94a !important; text-shadow: 0 0 8px rgba(45, 201, 74, 0.6); }
+.text-putih { color: #ffffff !important; text-shadow: 0 0 8px rgba(255, 255, 255, 0.5); }
+
+/* ==========================================================================
+   HERO SECTION
+   ========================================================================== */
+.hero-img {
+    width: 100%;
+    height: 100vh;
+    min-height: 450px;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    filter: brightness(0.5); /* PERBAIKAN: Diubah ke 0.5 agar gambar lebih gelap & teks terbaca jelas */
+    transition: filter 0.2s ease-out;
+}
+
+.hero-overlay {
+    background: rgba(11, 5, 24, 0.6);
+    padding: 20px;
+    z-index: 2;
+    position: relative;
+}
+
+/* ==========================================================================
+   HERO SECTION (TEKS DI TENGAH BANNER)
+   ========================================================================== */
+
+.hero-section {
+    width: 100%;
+    height: 100vh; 
+    min-height: 550px;
+    background-color: #0b0518;
+}
+
+.hero-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    filter: brightness(0.4); 
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(11,5,24,0.2) 0%, rgba(11,5,24,0.7) 100%);
+    z-index: 2;
+}
+
+/* Neon Typography */
+.font-poster-neon {
+    font-family: var(--font-display);
+    font-weight: 900;
+    color: #ffffff;
+    text-transform: uppercase;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px var(--panacea-cyan);        
+}
+
+.text-cyan-accent {
+    color: var(--panacea-cyan);
+    text-shadow: 0 0 10px rgba(0, 240, 255, 0.6);
+}
+
+/* ==========================================================================
+   ABOUT US SECTION
+   ========================================================================== */
+.bg-about {
+    background-color: #0d061f;
+    border-bottom: 1px solid #310461;
+}
+
+.text-secondary-white {
+    color: #d1d5db !important;
+    font-size: 1rem;
+    line-height: 1.7;
+}
+
+.glass-card {
+    background: rgba(49, 4, 97, 0.2);
+    border: 1px solid rgba(0, 240, 255, 0.2);
+    border-radius: 16px;
+    box-shadow: 0 0 30px rgba(0, 240, 255, 0.05);
+    backdrop-filter: blur(10px);
+}
+
+.neon-dot {
+    width: 8px;
+    height: 8px;
+    background-color: var(--panacea-lime);
+    border-radius: 50%;
+    display: inline-block;
+    box-shadow: 0 0 10px var(--panacea-lime);
+}
+
+/* ==========================================================================
+   INSTALASI KARYA COMPONENT
+   ========================================================================== */
+.inst-card {
+    background: rgba(49, 4, 97, 0.2);
+    border: 1px solid #310461;
+    border-radius: 15px;
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    height: 100%;
+}
+
+.inst-card:hover {
+    border-color: var(--panacea-cyan);
+    box-shadow: 0 0 20px rgba(0, 240, 255, 0.3);
+    transform: translateY(-8px);
+}
+
+.inst-img-grid {
+    width: 100%;
+    height: 220px;
+    overflow: hidden;
+    background: #1a0b36;
+}
+
+.inst-img-grid img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.6);
+    transition: transform 0.5s ease, filter 0.3s ease;
+}
+
+.inst-card:hover .inst-img-grid img {
+    filter: brightness(1);
+    transform: scale(1.05);
+}
+
+.inst-info {
+    padding: 20px;
+    text-align: center;
+}
+
+.inst-info h3 {
+    font-size: 1.1rem;
+    color: var(--panacea-lime);
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+}
+
+/* ==========================================================================
+   CARDS & SCHEDULE COMPONENT
+   ========================================================================== */
+.card-custom-img {
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-cyber-dark {
+    background: rgba(30, 15, 56, 0.4) !important;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(0, 240, 255, 0.2) !important;
+    border-radius: 15px !important;
+    overflow: hidden;
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-cyber-dark .card-title {
+    color: var(--panacea-lime) !important;
+    font-family: var(--font-display);
+}
+
+.card-cyber-dark p {
+    color: #e2e8f0 !important;
+}
+
+.card-cyber-dark:hover {
+    transform: translateY(-8px);
+    border-color: var(--panacea-cyan) !important;
+    box-shadow: 0 0 25px rgba(0, 240, 255, 0.4) !important;
+}
+
+/* ==========================================================================
+   FORM CONTROLS
+   ========================================================================== */
+.cyber-input {
+    border: 1px solid rgba(0, 240, 255, 0.2) !important;
+    background-color: rgba(11, 5, 24, 0.8) !important;
+    color: #ffffff !important;
+    padding: 0.75rem;
+    border-radius: 8px;
+}
+
+.cyber-input:focus {
+    background-color: rgba(26, 11, 54, 0.9) !important;
+    border-color: var(--panacea-cyan) !important;
+    box-shadow: 0 0 12px rgba(0, 240, 255, 0.3) !important;
+}
+
+.cyber-input::placeholder {
+    color: #a1a1aa !important;
+}
+
+/* ==========================================================================
+   MODALS COMPONENT
+   ========================================================================== */
+.cyber-modal {
+    background: rgba(11, 5, 24, 0.95) !important;
+    backdrop-filter: blur(15px);
+    border: 2px solid var(--panacea-cyan) !important;
+    box-shadow: 0 0 30px rgba(0, 240, 255, 0.3);
+    border-radius: 20px !important;
+}
+
+.modal-title {
+    font-family: var(--font-display);
+    letter-spacing: 1px;
+}
+
+.border-neon-white {
+    border: 2px solid #ffffff;
+    box-shadow: 0 0 15px rgba(0, 240, 255, 0.4);
+}
+
+/* ==========================================================================
+   BUTTONS UTILITY
+   ========================================================================== */
+.btn-outline-neon-cyan {
+    color: var(--panacea-cyan);
+    border: 1px solid var(--panacea-cyan);
+    background: transparent;
+    transition: all 0.3s ease;
+    font-family: var(--font-display);
+    font-weight: 600;
+}
+
+.btn-outline-neon-cyan:hover {
+    background: var(--panacea-cyan);
+    color: #0b0518;
+    box-shadow: 0 0 20px var(--panacea-cyan);
+}
